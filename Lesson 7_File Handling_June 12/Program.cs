@@ -109,26 +109,33 @@ namespace Lesson_7_File_Handling_June_12
                     string firstPart = ""; //Empty string because we are just declaring the variable. The variable for this will be filled in during the If/Else statement.
                     string secondPart = ""; //Empty string because we are just declaring the variable. The variable for this will be filled in during the If/Else statement.
 
+                    //Declaring the array named lineArray.  line inside of string[line] specifies the length of the array (always need to specify the length of an array in C#).
+                    string[] lineArray = new string[line];
 
                     if (line==1)
                     {
-                        firstPart = "Input line " + line + ": this is the first line.";
+                        firstPart = "Input line " + line + ": this is the first line."; //firstPart variable now has a value.
+                        lineArray[0] = firstPart; //The sentence above (firstPart) will be the first object in the array, lineArray[0], with an array index of 0.
                     } else 
                     {
-                        secondPart= "Input line " + line + ": this is the second line.";
+                        secondPart= "Input line " + line + ": this is the second line."; //secondPart variable now has a value.
+                        lineArray[1] = secondPart; //The sentence above (secondPart) will be the second object in the array, lineArray[1], with an array index of 1.
                     }
 
                     //Displaying in the Console.
                     Console.WriteLine(firstPart + secondPart);
 
-                    //Writing the lines in an array
-                    string[] lineArray = new string[] { firstPart, secondPart };
+                    //Displaying the lineArray in the arrayExercise6.txt file
+                    //ForEach loop is used to iterate over every single letter, object in an array.  It will check all of the things, you don’t have to specify the exact number of things to display or read. 
+                    foreach (string lineText in lineArray) //For each object (lineText) in the lineArray, do the following code below (which is to write the object from the array to the arrayExercise6.txt file).
+                    {
+                        array.WriteLine(lineText); //This will add each object from the lineArray and place it in the arrayExercise6.txt file.
+                    }
 
-                    //Place the information from the array into the arrayExercise6.txt file
-                    //array.WriteLine(lineArray);
+                                       
+                 /*Exercise 7: Create a file and write some text which omits (does not contain) some information from the text (selecting which text to display in the file).*/
 
 
-                    
 
 
                 }
