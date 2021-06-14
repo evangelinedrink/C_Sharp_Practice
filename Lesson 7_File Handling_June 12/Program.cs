@@ -101,9 +101,9 @@ namespace Lesson_7_File_Handling_June_12
             //Writing the array file called arrayExercise6.txt
             using (StreamWriter array = new StreamWriter("/Users/EvangelineDrink.000/Documents/C# and Microsoft Azure_Skillspire/Lecture 7_Practice Reading and Writing Files/arrayExercise6.txt"))
             {
-                
 
-                for(int line=1; line<3; line++)
+
+                for (int line = 1; line < 3; line++)
                 {
                     //Declaring the first and second lines (firstPart and secondPart variables) which are left blank until the if/else statement. 
                     string firstPart = ""; //Empty string because we are just declaring the variable. The variable for this will be filled in during the If/Else statement.
@@ -112,13 +112,14 @@ namespace Lesson_7_File_Handling_June_12
                     //Declaring the array named lineArray.  line inside of string[line] specifies the length of the array (always need to specify the length of an array in C#).
                     string[] lineArray = new string[line];
 
-                    if (line==1)
+                    if (line == 1)
                     {
                         firstPart = "Input line " + line + ": this is the first line."; //firstPart variable now has a value.
                         lineArray[0] = firstPart; //The sentence above (firstPart) will be the first object in the array, lineArray[0], with an array index of 0.
-                    } else 
+                    }
+                    else
                     {
-                        secondPart= "Input line " + line + ": this is the second line."; //secondPart variable now has a value.
+                        secondPart = "Input line " + line + ": this is the second line."; //secondPart variable now has a value.
                         lineArray[1] = secondPart; //The sentence above (secondPart) will be the second object in the array, lineArray[1], with an array index of 1.
                     }
 
@@ -127,19 +128,45 @@ namespace Lesson_7_File_Handling_June_12
 
                     //Displaying the lineArray in the arrayExercise6.txt file
                     //ForEach loop is used to iterate over every single letter, object in an array.  It will check all of the things, you don’t have to specify the exact number of things to display or read. 
-                    foreach (string lineText in lineArray) //For each object (lineText) in the lineArray, do the following code below (which is to write the object from the array to the arrayExercise6.txt file).
+                    foreach (string lineText in lineArray) //For each object (lineText variable, was created on this line) in the lineArray, do the following code below (which is to write the object from the array to the arrayExercise6.txt file).
                     {
                         array.WriteLine(lineText); //This will add each object from the lineArray and place it in the arrayExercise6.txt file.
                     }
-
-                                       
-                 /*Exercise 7: Create a file and write some text which omits (does not contain) some information from the text (selecting which text to display in the file).*/
-
-
-
-
                 }
             }
+
+            /*Exercise 7: Create a file and write some text which omits (does not contain) some information from the text (selecting which text to display in the file).*/
+            using (StreamWriter deleteWord = new StreamWriter("/Users/EvangelineDrink.000/Documents/C# and Microsoft Azure_Skillspire/Lecture 7_Practice Reading and Writing Files/deleteWordExercise7.txt"))
+            {
+                string sentence1 = "The quick brown fox jumps";
+                string sentence2 = "over the lazy dog.";
+
+                //Using the Contains() method to check if a string contains a word or not.  From this website: https://www.tutorialspoint.com/How-to-check-if-a-string-contains-a-certain-word-in-Chash  
+                if (sentence1.Contains("fox") == false)
+                {
+                    deleteWord.WriteLine(sentence1); //This will add the sentence (sentence1 variable) to the deleteWordExercise7.txt file (deleteWord variable).
+                }
+                else
+                {
+                    Console.WriteLine("The line containing the word fox will not be displayed in the .txt file."); //The line containing the word "fox" will not be written in the .txt file since there is no WriteLine() method. This line will display in the Console.
+                }
+
+                //Checking to see if the second sentence (sentence2) has the word "fox" in it. If the sentence doesn't contain the word fox, then the sentence will be added to the .txt file.
+                if (sentence2.Contains("fox") == false)
+                {
+                    deleteWord.WriteLine(sentence2); //This will add the sentence (sentence2 variable) to the deleteWordExercise7.txt file (deleteWord variable).
+                }
+                else
+                {
+                    Console.WriteLine("The line containing the word fox will not be displayed in the .txt file."); //The line containing the word "fox" will not be written in the .txt file since there is no WriteLine() method. This line will display in the Console.
+                }
+            }
+
+
+                        
         }
+
+
+
     }
-}
+ }
