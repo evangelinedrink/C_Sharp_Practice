@@ -162,8 +162,47 @@ namespace Lesson_7_File_Handling_June_12
                 }
             }
 
+            /*Exercise 8: Appending (to add) some text to an existing file. */
+            using (StreamWriter addLine= new StreamWriter("/Users/EvangelineDrink.000/Documents/C# and Microsoft Azure_Skillspire/Lecture 7_Practice Reading and Writing Files/appendLineExercise8.txt"))
+            {
+                
+                //Creating an array (textArray) of size 3 (3 objects in the array).
+                string[] textArray = new string[3];
 
-                        
+                //Using a For loop to push items in the array.
+                for(int i=0; i<=2; i++)
+                {
+                    string line1 = "Here is the content of the file mytest.txt: ";
+                    string line2 = "Hello and Welcome!\n It is the first content\n of the text file mytest.txt.";
+                    string line3 = "This is the line appendend at the last line.";
+
+                    if (i==0)
+                    {
+                        //Making line0 become the first index of the array.
+                        textArray[i] = line1;
+                    } else if(i==1)
+                    {
+                        //Making line0 become the first index of the array.
+                        textArray[i] = line2;
+                    } else
+                    {
+                        textArray[i] = line3;
+                    }
+                    
+                }
+
+                //Placing the text in the appendLineExercise8.txt file.
+                //ForEach loop is used to iterate over every single letter, object in an array.  It will check all of the things, you don’t have to specify the exact number of things to display or read. 
+                foreach (string line in textArray)
+                {
+                   addLine.WriteLine(line); //This will add each object from the textArray and place it in the .txt file.
+                }
+
+            }
+
+
+
+
         }
 
 
