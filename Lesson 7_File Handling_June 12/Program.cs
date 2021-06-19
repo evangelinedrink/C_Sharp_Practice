@@ -206,7 +206,7 @@ namespace Lesson_7_File_Handling_June_12
             using (StreamWriter newFile= new StreamWriter("/Users/EvangelineDrink.000/Documents/C# and Microsoft Azure_Skillspire/Lecture 7_Practice Reading and Writing Files/createNewFileExercise9.txt"))
             {
                 //Paragraph to be placed in the .txt file. \n is a line break.
-                string content = "Here is the content of the file mytext.txt: \n Hello and Welcome! \n It is the first content \n of the text file createNewFileExercise9.txt";
+                string content = "Here is the content of the file createNewFileExercise9.txt: \n Hello and Welcome! \n It is the first content \n of the text file createNewFileExercise9.txt";
 
                 //Creating an array to place the paragraph for the .txt file in. The size of the array is 2. The array will also be used to display the new sentence for the copied .txt file.
                 string[] textArray = new string[2];
@@ -217,14 +217,27 @@ namespace Lesson_7_File_Handling_June_12
                 //The first sentence in the copied .txt file.
                 string newContent = "The file createNewFileExercise9.txt successfully copied to createNewFileExercise9_copied.txt in the same directory.";
 
-                //Placing content variable's information into the file createNewFileExercise9.txt.
-                newFile.WriteLine(content); 
+                //Placing the newContent variable's values in the array.
+                textArray[0] = newContent;
 
-                //Using the File.Copy() method to copy an existing file to a new file in a specified location. 
-                //File.Copy() takes three parameters: first is the original file with full path, second is the file that is copied with its new path, third is an optional paramter used to overwrite an existing file. If third parameter is ture, the copy method will overwrite the file that already exists.
-                string originalFile = "/Users/EvangelineDrink.000/Documents/C# and Microsoft Azure_Skillspire/Lecture 7_Practice Reading and Writing Files/createNewFileExercise9.txt";
-                string newFileCopied= "/Users/EvangelineDrink.000/Documents/C# and Microsoft Azure_Skillspire/Lecture 7_Practice Reading and Writing Files/createNewFileExercise9_copied.txt";
-                File.Copy(originalFile, newFileCopied, true);
+                //Placing content variable's information into the file createNewFileExercise9.txt.
+                newFile.WriteLine(content);
+
+                //Using a ForEach loop to obtain all the inforamtion from the original file (createNewFileExercise9.txt) to the copied file (createNewFileExercise9_copied.txt)
+                foreach(string line in textArray)
+                {
+                    //Using the File.Copy() method to copy an existing file to a new file in a specified location. 
+                    //File.Copy() takes three parameters: first is the original file with full path, second is the file that is copied with its new path, third is an optional paramter used to overwrite an existing file. If third parameter is ture, the copy method will overwrite the file that already exists.
+                    string originalFile = "/Users/EvangelineDrink.000/Documents/C# and Microsoft Azure_Skillspire/Lecture 7_Practice Reading and Writing Files/createNewFileExercise9.txt";
+                    string newFileCopied = "/Users/EvangelineDrink.000/Documents/C# and Microsoft Azure_Skillspire/Lecture 7_Practice Reading and Writing Files/createNewFileExercise9_copied.txt";
+                    File.Copy(originalFile, newFileCopied, true);
+
+                    newFileCopied.WriteLine(line);
+                }
+
+                
+
+
             }
 
 
