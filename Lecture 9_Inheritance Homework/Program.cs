@@ -3,7 +3,7 @@
 namespace Lecture_9_Inheritance_Homework
 {
     //Parent Class will contain the information for the base pay, benefits and bonus. Parent Class will be called class Base.
-    //Child Class will be used to get the information from the Parent Class and add it to a string containing the tags of "Name: , Price:" . This will be in class Descriptions.
+    //Child Classes are the different employee types. They will have modified base pay, benefits, bonus and ID depending on what type of employee they are in the company. 
     //Program Class will contain the Main Method that will run the code, that way it can be displayed in the Console.
 
     class Base
