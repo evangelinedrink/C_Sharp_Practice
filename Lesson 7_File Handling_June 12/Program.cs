@@ -223,8 +223,17 @@ namespace Lesson_7_File_Handling_June_12
                 //Placing content variable's information into the file createNewFileExercise9.txt.
                 newFile.WriteLine(content);
 
+                //Using the File.Copy() method to copy an existing file to a new file in a specified location. 
+                //File.Copy() takes three parameters: first is the original file with full path, second is the file that is copied with its new path, third is an optional paramter used to overwrite an existing file. If third parameter is ture, the copy method will overwrite the file that already exists.
+                string originalFile = "/Users/EvangelineDrink.000/Documents/C# and Microsoft Azure_Skillspire/Lecture 7_Practice Reading and Writing Files/createNewFileExercise9.txt";
+                string newFileCopied = "/Users/EvangelineDrink.000/Documents/C# and Microsoft Azure_Skillspire/Lecture 7_Practice Reading and Writing Files/createNewFileExercise9_copied.txt";
+                File.Copy(originalFile, newFileCopied, true);
+
+                //Placing newContent variable's information into the file createNewFileExercise9_copied.txt.
+                newFileCopied.WriteLine(newContent);
+
                 //Using a ForEach loop to obtain all the inforamtion from the original file (createNewFileExercise9.txt) to the copied file (createNewFileExercise9_copied.txt)
-                foreach(string line in textArray)
+                /*foreach (string line in textArray)
                 {
                     //Using the File.Copy() method to copy an existing file to a new file in a specified location. 
                     //File.Copy() takes three parameters: first is the original file with full path, second is the file that is copied with its new path, third is an optional paramter used to overwrite an existing file. If third parameter is ture, the copy method will overwrite the file that already exists.
@@ -232,10 +241,10 @@ namespace Lesson_7_File_Handling_June_12
                     string newFileCopied = "/Users/EvangelineDrink.000/Documents/C# and Microsoft Azure_Skillspire/Lecture 7_Practice Reading and Writing Files/createNewFileExercise9_copied.txt";
                     File.Copy(originalFile, newFileCopied, true);
 
-                    newFileCopied.WriteLine(line);
+                    //newFileCopied.WriteLine(line);
                 }
+                */
 
-                
 
 
             }
