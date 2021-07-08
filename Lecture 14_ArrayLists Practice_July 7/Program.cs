@@ -79,9 +79,13 @@ namespace Lecture_14_ArrayLists_Practice_July_7
             //Creating the new Array and indicating its size, which is 3. Also adding values to the array.
             int[] exercise5 = new int[3] { 5, 1, 1 };
 
+            //Creating another array to compare the first element (with index number 0) with
+            int[] exercise5Array1 = new int[2] { 1, 1 };
+
+            //Creating another array to compare the second and third elements (with index number 1 and 2) with
+            int[] exercise5Array2 = new int[2] { 5, 1 };
 
             //Determining if there are duplicates in an array.  We will then count how many duplicates there are in the array by using a For loop and then another For and If loop nested in the first For loop.
-
             //Initializing the variable that will count how many duplicates there are in the array.  If we don't initialize this variable, C# will not let us work with this variable.
             int numOfDuplicates = 0;
             
@@ -91,13 +95,25 @@ namespace Lecture_14_ArrayLists_Practice_July_7
                 //Initializing and declaring the currentNumber variable
                 int currentNumber = exercise5[i];
 
-                //Nested For loop that will compare the currentNumber to each number in the exercise5 array.
-                for (int j=1; j<3; j++)
+                if(currentNumber== exercise5[0])
                 {
-                    if(currentNumber== exercise5[j]) //Comparing the current number with the elements in the exercise5 array
+                    //Nested For loop that will compare the currentNumber to each number in the exercise5Array1 array.
+                    for (int j=0; j<2; j++)
                     {
-                        numOfDuplicates++; //This means if there is a duplicate, it will be counted and the variable numOfDuplicates will increase by 1 since there is a duplicate.
-                        Console.WriteLine(numOfDuplicates);
+                        if (currentNumber == exercise5Array1[j]) //Comparing the current number with the elements in the exercise5 array
+                        {
+                            numOfDuplicates++; //This means if there is a duplicate, it will be counted and the variable numOfDuplicates will increase by 1 since there is a duplicate.
+                        }
+                    }
+                } else //When (currentNumber== exercise5[1]) || (currentNumber==exercise5[2])
+                {
+                    //Nested For loop that will compare the currentNumber to each number in the exercise5Array2 array.
+                    for (int j = 0; j < 2; j++)
+                    {
+                        if (currentNumber == exercise5Array2[j]) //Comparing the current number with the elements in the exercise5 array
+                        {
+                            numOfDuplicates++; //This means if there is a duplicate, it will be counted and the variable numOfDuplicates will increase by 1 since there is a duplicate.
+                        }
                     }
                 }
             }
@@ -117,9 +133,11 @@ namespace Lecture_14_ArrayLists_Practice_July_7
              *          if (currentNumber == array[i]) {
              *              numofDups++; 
              *          }  
-                */ 
+                */
 
-            
+
+            /*Exercise 6: Display the unique elements (the only value of its kind) of an array*/
+
         }
     }
 }
