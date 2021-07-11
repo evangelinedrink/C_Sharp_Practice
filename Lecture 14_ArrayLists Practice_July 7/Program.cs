@@ -208,7 +208,7 @@ namespace Lecture_14_ArrayLists_Practice_July_7
             */
 
 
-            /*Exercise 7: Merging two arrays of the same size sorted in ascending order*/
+            /*Not completed --> Exercise 7: Merging two arrays of the same size sorted in ascending order*/
             //Creating the new Array and indicating its size, which is 3. Also adding values to the array.
             int[] array1Exercise7 = new int[3] { 1, 2, 3 };
 
@@ -237,6 +237,61 @@ namespace Lecture_14_ArrayLists_Practice_July_7
             }
 
             foreach (int value in array3Exercise7)
+                Console.WriteLine(value);
+
+
+            /*Exercise 8: Count the frequency of each element in an array*/
+            //Creating the new Array and indicating its size, which is 3. Also adding values to the array.
+            int[] exercise8 = new int[3] { 25, 12, 43 };
+
+            for(int i=0; i<3; i++)
+            {
+                int currentValue = exercise8[i];
+
+                //Initializing the frequencyCounter. It is placed here because every time the For loop is being run, we are changing the index of the array, so the frequency counter has to be reset to zero. The frequency counter will change when the code goes to the next For loop.
+                int frequencyCounter = 0;
+                
+                for(int j=0; j<3; j++)
+                {
+                    if(currentValue == exercise8[j]) //When the current value sees itself in the array, it will add 1 to the frequency counter. 
+                    {
+                        frequencyCounter++; //Adding a value to the frequencyCounter
+                    }
+                }
+
+                Console.WriteLine("The value of " + currentValue + " occurs " + frequencyCounter + " times.");
+
+            }
+
+
+            /*Exercise 9: Find the maximum and minimum element in an array*/
+            //Creating the new Array and indicating its size, which is 3. Also adding values to the array.
+            int[] exercise9 = new int[3] { 21, 45, 25 };
+            //45, 25, 21
+            int[] exercise9Order = new int[3];
+            for(int i=0; i<3; i++)
+            {
+                int currentValue = exercise9[i];
+
+                for(int j=1; j<2; j++) //Use a Switch Statement for this part: https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/switch 
+                {
+                    if ((currentValue > exercise9[j]))
+                    {
+                        //exercise9Order[0] = exercise9[j];
+                        exercise9Order[2] = currentValue;
+                    } else if ((currentValue < exercise9[j]))
+                    {
+                        exercise9Order[0] = currentValue;
+                        //exercise9Order[2]= exercise9[j];
+                    } /*else if((currentValue> exercise9Order[0]) && (currentValue < exercise9Order[2]))
+                    {
+                         exercise9Order[1]= currentValue;
+                    }*/
+                }
+              
+            }
+
+            foreach (int value in exercise9Order)
                 Console.WriteLine(value);
         }
     }
