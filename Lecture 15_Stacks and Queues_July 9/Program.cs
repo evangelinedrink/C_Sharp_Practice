@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Collections; //This is needed when working with Queues.
+using System.Collections; //This is needed when working with any C# Methods and also with Stacks and Queues.
 
 namespace Lecture_15_Stacks_and_Queues_July_9
 {

@@ -90,8 +90,10 @@ namespace Lecture_14_ArrayLists_Practice_July_7
             int numOfDuplicates = 0;
             
             //We will traverse through the array to see if there are any duplicated by using a For loop
-            for (int i=0; i<3; i++) //i corresponds to the index number of the elements in the array.
+            for (int i=0; i<2; i++) //i corresponds to the index number of the elements in the array. 
+            //Since there is an odd number of values in the exercise 5 array, we will only be looking at two elements in the array since the third element will be compared with the other elements. This is why we only look at the elements with index numbers 0 and 1.
             {
+
                 //Initializing and declaring the currentNumber variable
                 int currentNumber = exercise5[i];
 
@@ -137,7 +139,105 @@ namespace Lecture_14_ArrayLists_Practice_July_7
 
 
             /*Exercise 6: Display the unique elements (the only value of its kind) of an array*/
+            //Creating the new Array and indicating its size, which is 3. Also adding values to the array.
+            int[] exercise6 = new int[3] { 1, 5, 1 };
+            //Setting the uniqueValue to zero because we are initializing this variable.
+            int uniqueValue = 0;
+            
 
+            for(int i=0; i<3; i++)
+            {
+                int currentValue = exercise6[i]; //Setting the first element in exercise6 as the currentValue
+
+                for(int j=0; j<3; j++)
+                {
+                    if(currentValue != exercise6[j]) //If the currentValue is not the same as the value it is being compared to, then the value it is being compared to (exercise6[j]) will be the unique value.
+                    {
+                        uniqueValue = exercise6[j];
+                    }
+                }
+            }
+            Console.WriteLine("The unique elements found in the array are: " + uniqueValue);
+
+
+            /*
+            //Creating the new ArrayList and adding elements using the Object Initializer Syntax 
+            var exercise6 = new ArrayList()
+            {
+                1, 5, 1
+            };
+            //int[] exercise6 = new int[3] { 1, 5, 1 };
+            //int uniqueValue = 0;
+
+            //Creating an ArrayList that will contain the unique values of the exercise6 ArrayList
+            var uniqueValues = new ArrayList()
+            {
+                0, 0, 0
+            };
+
+            for(int i=0; i<3; i++)
+            {
+                int currentValue = (int)exercise6[i];
+                
+
+                for (int j=0; j<3; j++)
+                {
+                    int comparedValue = (int)exercise6[j];
+                    if (currentValue != comparedValue)
+                    {
+                        //uniqueValue = exercise6[j];
+                        for(int k=0; k<3; k++)
+                        {
+                            if(comparedValue == uniqueValues[k])
+                            {
+                                uniqueValues.Remove(k); //Removing the element in uniqueValues ArrayList if the values it is being checked with are the same.
+                            } else
+                            {
+                                uniqueValues.Add(exercise6[j]);
+                            }
+                        }
+                        
+                    }
+                }
+            }
+
+            for(int i=0; i<3; i++)
+            {
+                Console.WriteLine("The unique elements found in the array are: " + uniqueValues[i]);
+            }
+            */
+
+
+            /*Exercise 7: Merging two arrays of the same size sorted in ascending order*/
+            //Creating the new Array and indicating its size, which is 3. Also adding values to the array.
+            int[] array1Exercise7 = new int[3] { 1, 2, 3 };
+
+            int[] array2Exercise7 = new int[3] { 1, 2, 3 }; //Second array
+
+            //Initializing the array that is going to be used to merge arrays 1 and 2 together.
+            int[] array3Exercise7 = new int[6];
+
+            //int space;
+
+            for(int i=0; i<6; i++)
+            {
+                for(int j=0; j<3; j++)
+                {
+                    array3Exercise7[i] = array1Exercise7[j];
+                }
+
+                if(i>=3)
+                {
+                    for (int k = 0; k < 3; k++)
+                    {
+                        array3Exercise7[i] = array2Exercise7[k];
+                    }
+                }
+
+            }
+
+            foreach (int value in array3Exercise7)
+                Console.WriteLine(value);
         }
     }
 }
