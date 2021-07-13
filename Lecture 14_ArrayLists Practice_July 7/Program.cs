@@ -7,7 +7,7 @@ namespace Lecture_14_ArrayLists_Practice_July_7
     {
         static void Main(string[] args)
         {
-            /*Array and ArrayList Exercises found at this website: https://www.w3resource.com/csharp-exercises/array/index.php*/
+            /*Array and ArrayList Exercises found at this website: https://www.w3resource.com/csharp-exercises/array/index.php  */
 
             /*Exercise 1: Store Elements in an Array and Print it*/
 
@@ -267,32 +267,71 @@ namespace Lecture_14_ArrayLists_Practice_July_7
             /*Exercise 9: Find the maximum and minimum element in an array*/
             //Creating the new Array and indicating its size, which is 3. Also adding values to the array.
             int[] exercise9 = new int[3] { 21, 45, 25 };
-            //45, 25, 21
-            int[] exercise9Order = new int[3];
+            //int[] exercise9= new int[3] {45, 25, 21}; //Testing to see if the code works for the above array and this array.
+
+            //Only create arrays that we need.  We only need to show the minimum and maximum values of the exercise9 array, so we only an array to hold one minimum value and an array to hold one maximum value.
+            //Creating the minimum array
+            int[] minimum = new int[1]; //The initial value inside of minimum array is 0.
+
+            //Creating the maximum array
+            int[] maximum = new int[1]; //The initial value inside of maximum array is 0.
+
             for(int i=0; i<3; i++)
             {
                 int currentValue = exercise9[i];
 
-                for(int j=1; j<2; j++) //Use a Switch Statement for this part: https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/switch 
+                if((minimum[0]==0) &&(maximum[0]==0)) //If the minimum value is equal to 0, which it will be in the beginning of this loop, make the value in the minimum array set to the first value of the exercise9 array (exercise9[0]).
                 {
-                    if ((currentValue > exercise9[j]))
-                    {
-                        //exercise9Order[0] = exercise9[j];
-                        exercise9Order[2] = currentValue;
-                    } else if ((currentValue < exercise9[j]))
-                    {
-                        exercise9Order[0] = currentValue;
-                        //exercise9Order[2]= exercise9[j];
-                    } /*else if((currentValue> exercise9Order[0]) && (currentValue < exercise9Order[2]))
-                    {
-                         exercise9Order[1]= currentValue;
-                    }*/
+                    minimum[0] = currentValue; //Adding the currentValue to the minimum Array 
+                    maximum[0] = currentValue; //Adding the currentValue to the maximum Array 
+                } else if (currentValue < minimum[0]) //If the currentValue is less than the minimum[0] value it will then become the minimum[0] value
+                {
+                    minimum[0] = currentValue;
+                } else if (currentValue > maximum[0]) //If the currentValue is greater than the maximum[0] value, it will become the maximum value.
+                {
+                    maximum[0] = currentValue;
                 }
-              
+                              
             }
 
-            foreach (int value in exercise9Order)
-                Console.WriteLine(value);
+            Console.WriteLine("The minimum value in the array is " + minimum[0]);
+            Console.WriteLine("The maximum value in the array is " + maximum[0]);
+
+
+            /*Exercise 10: Separate odd and even integers in separate arrays*/
+
+            //Creating the new Array and indicating its size, which is 5. Also adding values to the array.
+            int[] exercise10 = new int[5] { 25, 47, 42, 56, 32 };
+
+            //Creating the odd integers array. Using ArrayLists because we don't know how many elements will be going into this array.
+            var oddIntegers = new ArrayList();
+
+            //Creating the even integers array.
+            var evenIntegers = new ArrayList();
+
+            //Determining if the number is even or odd by first going through all the numbers in the array with a For loop.
+            for(int i=0; i<5; i++)
+            {
+                int currentValue = exercise10[i];
+
+                //Determining if the currentValue number is even or odd by using If/Else statement
+                if (currentValue % 2 == 0) //If the currentValue is even, 2 can divide with it evenly, so there will be no remainder (using Modulo)
+                {
+                    evenIntegers.Add(currentValue);
+                } else //If the currentValue is odd (there will be a remainder when currentValue is divided by 2), so the currentValue will then be placed in the oddIntegers ArrayList
+                {
+                    oddIntegers.Add(currentValue);
+                }
+            }
+
+            //Have to use ForEach loop to display all the elements in an Array or ArrayList
+            foreach(int evenValue in evenIntegers)
+                Console.WriteLine("The even elements are " + evenValue); //Displaying the even integers in the Console.
+
+            foreach(int oddValue in oddIntegers)
+                Console.WriteLine("The odd elements are " + oddValue); //Displaying the odd integers in the Console.
+
+
         }
     }
 }
