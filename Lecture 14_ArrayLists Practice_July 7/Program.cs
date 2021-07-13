@@ -332,6 +332,33 @@ namespace Lecture_14_ArrayLists_Practice_July_7
                 Console.WriteLine("The odd elements are " + oddValue); //Displaying the odd integers in the Console.
 
 
+            /*(Not working) Exercise 11: Sort elements in an array in ascending order*/
+            //Creating the new Array and indicating its size, which is 5. Also adding values to the array.
+            int[] exercise11 = new int[5] { 2, 7, 4, 5, 9 };
+
+            for (int i=0; i<5; i++)
+            {
+                int currentValue = exercise11[i];
+
+                for(int j=1; j<5; j++)
+                {
+                    if (currentValue > exercise11[j]) //If the currentValue is greater than the number above it, currentValue will switch places with exercise11[j]
+                    {
+                        int placeHolder = currentValue; //To not delete the values in the exercise11 array, we will need a placeHolder variable that will be equal to the currentValue number
+                        currentValue = exercise11[j]; //exercise11[j] will now have the variable currentValue since the number for currentValue is now equal to placeHolder (this makes sure nothing is deleted in the array)
+                        exercise11[j] = placeHolder; //placeHolder is the number for exercise11[i] (this was done in line 350), which will then have a higher index in the exercise11 array because it is a larger number (placing number in ascending order) 
+                    }
+                }
+            }
+
+            //Displaying the Array with elements in Ascending order
+            foreach (int element in exercise11)
+                Console.WriteLine("Elements of array in sorted ascending order are " + element);
+
+
+            /*Exercise 12: Sort elements in an array in ascending order*/
+            //Creating the new Array and indicating its size, which is 3. Also adding values to the array.
+            int[] exercise12 = new int[3] { 5, 9, 1 };
         }
     }
 }
