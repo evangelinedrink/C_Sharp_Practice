@@ -336,16 +336,16 @@ namespace Lecture_14_ArrayLists_Practice_July_7
             //Creating the new Array and indicating its size, which is 5. Also adding values to the array.
             int[] exercise11 = new int[5] { 2, 7, 4, 5, 9 };
 
-            for (int i=0; i<5; i++)
+            for (int i=0; i<5; i++) 
             {
                 int currentValue = exercise11[i];
 
-                for(int j=1; j<5; j++)
+                for(int j=i+1; j<5; j++) //j is i + 1 because we want to test the value right after exercise11[i]. When i = 1, then we compare exercise11[1] and exercise11[2].  If we had j = 1 instead of i + 1, when i = 1 we will compare exercise11[1] and exercise11[1] (which is comparing itself, not what we want).
                 {
                     if (currentValue > exercise11[j]) //If the currentValue is greater than the number above it, currentValue will switch places with exercise11[j]
                     {
                         int placeHolder = currentValue; //To not delete the values in the exercise11 array, we will need a placeHolder variable that will be equal to the currentValue number
-                        currentValue = exercise11[j]; //exercise11[j] will now have the variable currentValue since the number for currentValue is now equal to placeHolder (this makes sure nothing is deleted in the array)
+                        exercise11[i] = exercise11[j]; //exercise11[j] will now be exercise11[i] since the number for currentValue is now equal to placeHolder (this makes sure nothing is deleted in the array)
                         exercise11[j] = placeHolder; //placeHolder is the number for exercise11[i] (this was done in line 350), which will then have a higher index in the exercise11 array because it is a larger number (placing number in ascending order) 
                     }
                 }
@@ -359,6 +359,55 @@ namespace Lecture_14_ArrayLists_Practice_July_7
             /*Exercise 12: Sort elements in an array in ascending order*/
             //Creating the new Array and indicating its size, which is 3. Also adding values to the array.
             int[] exercise12 = new int[3] { 5, 9, 1 };
+
+            for (int i=0; i<3; i++)
+            {
+                int currentValue = exercise12[i];
+
+                for(int j=i+1; j<3; j++) //j is i+1 because we want to test the value right after exercise12[i]. When i=1, then we compare exercise12[1] and exercise12[2].  If we had j=1 instead of i+1, when i=1 we will compare exercise12[1] and exercise12[1] (which is comparing itself, not what we want).
+                {
+                    if (currentValue < exercise12[j]) //If currentValue is less than the number for exercise12[j], the currentValue will take the index position of exercise12[j] while the number in exercise12[j] will become exercise12[i]
+                    {
+                        int placeHolder = currentValue;
+                        exercise12[i] = exercise12[j];
+                        exercise12[j] = placeHolder;
+                    }
+                }
+            }
+
+            foreach (int element in exercise12)
+                Console.WriteLine(element);
+
+
+            /*Exercise 13: Insert new value in the array, then sort the array (from ascending order)*/
+            //Creating ArrayList for Exercise 13 and adding elements using the Object Initializer Syntax
+            var exercise13 = new ArrayList()
+            {
+                5, 7, 9
+            };
+
+            var exercise13NewElement = new ArrayList()
+            {
+                8
+            };
+      
+            for(int i=0; i<3; i++)
+            {
+                var newElement = exercise13NewElement[0];
+                var element = exercise13[i];
+                
+                if (newElement < element)
+                {
+
+                }
+                
+                for(int j=i+1; j<3; j++)
+                {
+                    if(newElement<)
+                }
+
+
+            }
         }
     }
 }
