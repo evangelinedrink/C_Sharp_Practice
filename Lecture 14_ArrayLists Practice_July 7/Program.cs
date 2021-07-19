@@ -236,6 +236,7 @@ namespace Lecture_14_ArrayLists_Practice_July_7
 
             }
 
+            //Comparing if one value is greater than the other. Using a For loop and If/Else statement
             foreach (int value in array3Exercise7)
                 Console.WriteLine(value);
 
@@ -335,12 +336,23 @@ namespace Lecture_14_ArrayLists_Practice_July_7
             /*(Not working) Exercise 11: Sort elements in an array in ascending order*/
             //Creating the new Array and indicating its size, which is 5. Also adding values to the array.
             int[] exercise11 = new int[5] { 2, 7, 4, 5, 9 };
+            
+            //Eileen's way
+            /*
+            int[] exercise11 = new int[10];
+            int comp1; //Comparison variables (initializing this variable)
+            int comp2;
+            int comp3;
+            int comp4;
+
+            //Sort the array, input the size of the array, place the array. (Comparing two arrays)
+            */
 
             for (int i=0; i<5; i++) 
             {
                 int currentValue = exercise11[i];
 
-                for(int j=i+1; j<5; j++) //j is i + 1 because we want to test the value right after exercise11[i]. When i = 1, then we compare exercise11[1] and exercise11[2].  If we had j = 1 instead of i + 1, when i = 1 we will compare exercise11[1] and exercise11[1] (which is comparing itself, not what we want).
+                for (int j=i+1; j<5; j++) //j is i + 1 because we want to test the value right after exercise11[i]. When i = 1, then we compare exercise11[1] and exercise11[2].  If we had j = 1 instead of i + 1, when i = 1 we will compare exercise11[1] and exercise11[1] (which is comparing itself, not what we want).
                 {
                     if (currentValue > exercise11[j]) //If the currentValue is greater than the number above it, currentValue will switch places with exercise11[j]
                     {
@@ -349,6 +361,7 @@ namespace Lecture_14_ArrayLists_Practice_July_7
                         exercise11[j] = placeHolder; //placeHolder is the number for exercise11[i] (this was done in line 350), which will then have a higher index in the exercise11 array because it is a larger number (placing number in ascending order) 
                     }
                 }
+                
             }
 
             //Displaying the Array with elements in Ascending order
@@ -386,28 +399,46 @@ namespace Lecture_14_ArrayLists_Practice_July_7
                 5, 7, 9
             };
 
-            var exercise13NewElement = new ArrayList()
-            {
-                8
-            };
-      
-            for(int i=0; i<3; i++)
-            {
-                var newElement = exercise13NewElement[0];
-                var element = exercise13[i];
-                
-                if (newElement < element)
-                {
+            int newElement = 8; //Element to add to the exercise13 Array List
 
-                }
+            //Adding the number 8 to the exercise13 ArrayList
+            exercise13.Add(newElement);
+
+            //Sorting the elements in the exercise13 ArrayList using the Sort() method
+            exercise13.Sort();
+
+            foreach (int element in exercise13)
+                Console.Write(element + " , ");
+
+
+            /*Exercise 14: Insert a new value in an array (unsorted list).*/
+            //Creating an array with length 5.  The zero will replace with the number 5.
+            int[] exercise14 = new int[5] {1, 8, 7, 10, 0 };
+
+            for(int i=0; i<5; i++)
+            {
+                int currentValue = exercise14[i];
+                int newValue = 5; //Number that we will be adding to the exercise14 Array
                 
-                for(int j=i+1; j<3; j++)
+                if (currentValue == 0) //If the currentValue is equal to zero,  5 will replace it. 
                 {
-                    if(newElement<)
+                    currentValue = newValue;
                 }
 
+                for(int j=i+1; j<5; j++)
+                {
+                    if (currentValue > exercise14[j])
+                    {
+                        int placeHolder = currentValue;
+                        exercise14[i] = exercise14[j];
+                        exercise14[j] = placeHolder; //The number for the placeHolder will take the higher index number (exercise14[j]). This will make the larger number be at the end of the array.
+                    }
+                }
 
             }
+
+            foreach (int element in exercise14)
+                Console.WriteLine("\n" + element);
         }
     }
 }
