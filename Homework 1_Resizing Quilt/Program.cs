@@ -9,6 +9,12 @@ namespace Homework_1_Resizing_Quilt
             line1();
             line2();
             line3();
+            line4(); //End of the first half of quilt
+            line4(); //Start of the second half of quilt
+            line3();
+            line2();
+            lineSpace(); //Creating a space between different lines of the quilt.
+            line1();
 
             /*Pseudocode for Homework 1: Resizing Quilts*/
             //Each line of the quilt has its own Method. The Parameter is important because it will determine the number of dots that will be placed in the quilt.
@@ -36,6 +42,11 @@ namespace Homework_1_Resizing_Quilt
             //Create the dots in spaces 5-12 (nested For loop)
             //For lines 13 and 14, create the < (line 13) and > (line 14)
             //For lines 15 and 16, create blank spaces in the line.
+            
+            /*For line 4*/
+            //There are no blank spaces in line 4 of the quilt
+            //Diamonds: For spaces 1 and 2, create the < and >. For spaces 15 and 16, also create the < and >.
+            //The rest of the spaces in the fourth line are dots.  This is why a If/Else If / and Else statement will be used.
         }
 
         /*
@@ -45,6 +56,12 @@ namespace Homework_1_Resizing_Quilt
             Console.Write(" ");
         }
         */
+
+        //Creating a space between each of the lines of the quilt with the lineSpace() method.
+        public static void lineSpace()
+        {
+            Console.WriteLine("\n");
+        }
 
         public static void line1()
         {
@@ -182,6 +199,30 @@ namespace Homework_1_Resizing_Quilt
             }
             
         }
-        
+
+        public static void line4()
+        {
+            //Creating a new line for the third line pattern
+            Console.WriteLine("\n");
+
+            for (int i=1; i<17; i++)
+            {
+                //Diamonds: For spaces 1 and 2, create the < and >. For spaces 15 and 16, also create the < and >.
+                if((i==1) || (i==15))
+                {
+                    Console.Write("<");
+                } else if ((i==2) || (i == 16))
+                {
+                    Console.Write(">");
+                }
+                else
+                {
+                    Console.Write("."); //Creating the dots in the fourth line. Since there are no spaces in the fourth line, the rest will just be dots.
+                }
+                
+            }
+
+        }
+
     }
 }
