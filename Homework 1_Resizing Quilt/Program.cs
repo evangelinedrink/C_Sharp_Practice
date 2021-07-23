@@ -25,8 +25,8 @@ namespace Homework_1_Resizing_Quilt
             /*For line 1*/
             //Create 6 blank spaces in line (might use a For loop where initialization corresponds to the position of the space on the line until the 7th space on line)
             //For spaces 7-10, follow the following code (might use a For loop with and If/Else statement to create the < or >)
-                //On the 7th space (and 9th space), insert a <
-                //On the 8th space (and 10th space), insert a >
+            //On the 7th space (and 9th space), insert a <
+            //On the 8th space (and 10th space), insert a >
             //Insert 6 additional blank spaces in the line (use a For loop for this. i will correspond to the space on the line (space 11 until the 16th space)
 
             /*For line 2*/
@@ -42,11 +42,29 @@ namespace Homework_1_Resizing_Quilt
             //Create the dots in spaces 5-12 (nested For loop)
             //For lines 13 and 14, create the < (line 13) and > (line 14)
             //For lines 15 and 16, create blank spaces in the line.
-            
+
             /*For line 4*/
             //There are no blank spaces in line 4 of the quilt
             //Diamonds: For spaces 1 and 2, create the < and >. For spaces 15 and 16, also create the < and >.
             //The rest of the spaces in the fourth line are dots.  This is why a If/Else If / and Else statement will be used.
+
+            /*For lines 5 to 8*/
+            //Since lines 5 to 8 are lines 4 to 1 in descending order, I just placed lines 4 to 1 in reverse order in the Main method.
+
+            /*Creating different size quilts*/
+            //I will use a formula that will calculate the number of spaces in the front and back of the quilt
+            //Equation for blank spaces in the front of the quilt: line number * -2 + 8
+            //First Diamond comes after first blank spaces. This means it will take up 2 spaces in the line and have line numbers after first blank spaces.
+                //Line 1 for Diamonds: The diamonds will be multiplied by the size that the user wants. For size 1 (original size), there are 2 diamonds.
+                //For size 2x, there are 4 diamonds.
+                //Equation for Line 1 for Diamonds is: size indicated by user * 2 (2 corresponds to two complete diamonds, <> )
+            //Dots: Dots are between the diamonds. If a person asks for 2x the size of the original quilt, for line 2 there will be 8 dots.
+                //Equation for dots in line 2 is: size indicated  by user * 4
+                //Equation for dots in line 3 is: size indicated  by user * 8
+                //Equation for dots in line 4 is: size indicated  by user * 12
+            //Second Diamond comes before the last blank spaces. This means it will take up 2 spaces in the line and have line numbers before the last blank spaces.
+            //Equation for blank spaces in the back of the quilt: 4 * line number - 4
+
         }
 
         /*
