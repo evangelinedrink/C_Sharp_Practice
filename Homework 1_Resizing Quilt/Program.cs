@@ -67,13 +67,39 @@ namespace Homework_1_Resizing_Quilt
 
         }
 
-        /*
-        //Since a method is required to do only one thing, this method will be used to adjust the starting spaces
-        public static void frontSpaces()
+
+        //Since a method is required to do only one thing, this frontSpaces method will be used to adjust the starting blank spaces in the quilt. 
+        //Equation for blank spaces in the front of the quilt: line number * -2 + 8 
+        //We only need the line number to determine how many first blank spaces to produce in the line
+        public static void frontSpaces(int quiltSize, int lineNumber)
         {
-            Console.Write(" ");
+            //Determining the number of blank spaces to include
+            int frontBlankSpaces = lineNumber * -2 + 8;
+
+            //If there are no front blank spaces in the quilt, then this if statement will not run
+            if(frontBlankSpaces >= 1)
+            {
+                //Create the first blank spaces in line 
+                for (int i = 0; i < frontBlankSpaces ; i++)
+                {
+                    Console.Write(" "); //This states for each space (represented by i), the Console will place an empty space (represented by " ").  We want this on one line, so we use Console.Write instead of Console.WriteLine.
+                }
+            }
         }
-        */
+
+        //Method to create the first diamond
+        //First Diamond comes after first blank spaces. This means it will take up 2 spaces in the line and have line numbers after first blank spaces.
+        //Line 1 for Diamonds: The diamonds will be multiplied by the size that the user wants. For size 1 (original size), there are 2 diamonds.
+        //For size 2x, there are 4 diamonds.
+        //Equation for Line 1 for Diamonds is: size indicated by user * 2 (2 corresponds to two complete diamonds, <> )
+        public static void firstDiamond(int quiltSize)
+        {
+            int firstDiamonds = quiltSize * 2; //The 2 corresponds to one complete diamonds, <>
+
+        }
+
+
+        /*Original Code to create the original quilt size */
 
         //Creating a space between each of the lines of the quilt with the lineSpace() method.
         public static void lineSpace()
@@ -83,15 +109,15 @@ namespace Homework_1_Resizing_Quilt
 
         public static void line1()
         {
-            for(int i=1; i<=17; i++) //Including borders: 0,19. Not including borders: 1,17 There are 16 spaces in each line (not considering the border of the loop). This For loop will incorporate all the spaces (which corresponds to i) in the line.  If we consider the borders of the quilt, you would need these parameters:  (space 1 (represented by i=0) and 18 (represented by i=18) are the borders of the quilt)
+            for(int i=0; i<=19; i++) //Including borders: 0,19. Not including borders: 1,17 There are 16 spaces in each line (not considering the border of the loop). This For loop will incorporate all the spaces (which corresponds to i) in the line.  If we consider the borders of the quilt, you would need these parameters:  (space 1 (represented by i=0) and 18 (represented by i=18) are the borders of the quilt)
             {
-                /*
+                
                 //Creating the border of the quilt for line 1
                 if(i==0) 
                 {
                     Console.Write("|"); //Creating the side borders of the quilt
                 }
-                */      
+                      
 
                 //Create 6 blank spaces in line (might use a For loop where initialization corresponds to the position of the space on the line until the 7th space on line)
                 for (i = 1; i < 7; i++)
