@@ -7,10 +7,10 @@ namespace Homework_1_Resizing_Quilt
         static void Main(string[] args)
         {
             //Quilt Size that the user would like
-            int quiltSize = 1;
+            int quiltSize = 2;
 
             //Using the Methods to create the quilt
-            topBottomBorders(); //Creating the top border of the quilt
+            topBottomBorders(quiltSize); //Creating the top border of the quilt
             LineSpace(); //Creating a new line between the top border and first line
             Line1(quiltSize); //Creating the first line of the quilt
             Line2(quiltSize); //Creating the second line of the quilt
@@ -22,7 +22,7 @@ namespace Homework_1_Resizing_Quilt
             LineSpace(); //Creating a new line between the seventh and eigth line
             Line1(quiltSize); //Creating the eigth line of the quilt
             LineSpace(); //Creating a new line between the eigth line and bottom border of the quilt
-            topBottomBorders(); //Creating the bottom border of the quilt
+            topBottomBorders(quiltSize); //Creating the bottom border of the quilt
 
             //Method to create Lines 1 and 8
             static void Line1(int quiltSize)
@@ -30,9 +30,11 @@ namespace Homework_1_Resizing_Quilt
                 //For Line 1 in the Quilt
                 int lineNumber1 = 1;
                 sideBorder();
-                whiteSpaces(quiltSize, lineNumber1);
-                diamond(quiltSize * 2); //To create two whole diamonds
-                whiteSpaces(quiltSize, lineNumber1);
+                whiteSpaces(lineNumber1);
+                diamondLine1(quiltSize*2); //To double the amount of diamonds by multiplying by 2
+                //diamond(quiltSize*2); //To create two whole diamonds (this is why it is multiplied by 2)
+                //diamond(quiltSize*2); //To create two whole diamonds               
+                whiteSpaces(lineNumber1);
                 sideBorder();
             }
           
@@ -42,12 +44,13 @@ namespace Homework_1_Resizing_Quilt
                 //For Line 2 in the Quilt
                 int lineNumber2 = 2;
                 LineSpace();
+                //Space between the end of the rug and the side bar 
                 sideBorder();
-                whiteSpaces(quiltSize, lineNumber2);
-                diamond(quiltSize);
+                whiteSpaces(lineNumber2);
+                diamond();
                 dotsLine2(quiltSize);
-                diamond(quiltSize);
-                whiteSpaces(quiltSize, lineNumber2);
+                diamond();
+                whiteSpaces(lineNumber2);
                 sideBorder();
             }
             
@@ -58,11 +61,11 @@ namespace Homework_1_Resizing_Quilt
                 int lineNumber3 = 3;
                 LineSpace();
                 sideBorder();
-                whiteSpaces(quiltSize, lineNumber3);
-                diamond(quiltSize);
+                whiteSpaces(lineNumber3);
+                diamond();
                 dotsLine3(quiltSize);
-                diamond(quiltSize);
-                whiteSpaces(quiltSize, lineNumber3);
+                diamond();
+                whiteSpaces(lineNumber3);
                 sideBorder();
             }
             
@@ -73,59 +76,14 @@ namespace Homework_1_Resizing_Quilt
                 int lineNumber4 = 4;
                 LineSpace();
                 sideBorder();
-                whiteSpaces(quiltSize, lineNumber4);
-                diamond(quiltSize);
+                whiteSpaces(lineNumber4);
+                diamond();
                 dotsLine4(quiltSize);
-                diamond(quiltSize);
-                whiteSpaces(quiltSize, lineNumber4);
+                diamond();
+                whiteSpaces(lineNumber4);
                 sideBorder();
             }
   
-            /*
-            //Start of the second half of the quilt
-
-            //For Line 5 in the Quilt (identical code for Line 4)
-            LineSpace();
-            sideBorder();
-            whiteSpaces(quiltSize, lineNumber4);
-            diamond(quiltSize);
-            dotsLine4(quiltSize);
-            diamond(quiltSize);
-            whiteSpaces(quiltSize, lineNumber4);
-            sideBorder();
-
-            //For Line 6 in the Quilt (identical code for Line 3)
-            LineSpace();
-            sideBorder();
-            whiteSpaces(quiltSize, lineNumber3);
-            diamond(quiltSize);
-            dotsLine3(quiltSize);
-            diamond(quiltSize);
-            whiteSpaces(quiltSize, lineNumber3);
-            sideBorder();
-
-            //For Line 7 in the Quilt (identical code for Line 2)
-            LineSpace();
-            sideBorder();
-            whiteSpaces(quiltSize, lineNumber2);
-            diamond(quiltSize);
-            dotsLine2(quiltSize);
-            diamond(quiltSize);
-            whiteSpaces(quiltSize, lineNumber2);
-            sideBorder();
-
-            //For Line 8 in the Quilt (identical code for Line 1)
-            Line1(quiltSize);
-            */
-
-            /*
-            LineSpace();
-            sideBorder();
-            whiteSpaces(quiltSize, lineNumber1);
-            diamond(quiltSize * 2); //To create two whole diamonds
-            whiteSpaces(quiltSize, lineNumber1);
-            sideBorder();
-            */
 
             /*
             //From the original code
@@ -196,7 +154,7 @@ namespace Homework_1_Resizing_Quilt
         //Since a method is required to do only one thing, this frontSpaces method will be used to adjust the starting blank spaces in the quilt. 
         //Equation for blank spaces in the front of the quilt: line number * -2 + 8 
         //We only need the line number to determine how many first blank spaces to produce in the line
-        public static void whiteSpaces(int quiltSize, int lineNumber)
+        public static void whiteSpaces(int lineNumber)
         {
             
             //Determining the number of blank spaces to include
@@ -224,31 +182,58 @@ namespace Homework_1_Resizing_Quilt
             Console.WriteLine("\n"); //Creating a new line on the quilt
         }
 
-        public static void topBottomBorders()
+        public static void topBottomBorders(int quiltSize)
         {
-            Console.Write("#");
-
-            string equalSignCounter = "=";
-
-            for(int i=0; i<15; i++)
+            for (int i = 0; i < quiltSize; i++)
             {
-                equalSignCounter += "=";
-            }
-            Console.Write(equalSignCounter);
+                Console.Write("#");
 
-            Console.Write("#");
+                string equalSignCounter = "=";
+
+                for (int k = 0; k < 15; k++)
+                {
+                    equalSignCounter += "=";
+                }
+                Console.Write(equalSignCounter);
+
+                Console.Write("#");
+            }
+
         }
+
+        //Method to create the spacing between the 
 
         //Method to create the first diamond
         //First Diamond comes after first blank spaces. This means it will take up 2 spaces in the line and have line numbers after first blank spaces.
         //Line 1 for Diamonds: The diamonds will be multiplied by the size that the user wants. For size 1 (original size), there are 2 diamonds.
         //For size 2x, there are 4 diamonds.
         //Equation for Line 1 for Diamonds is: size indicated by user * 2 (2 corresponds to two complete diamonds, <> )
-        public static void diamond(int quiltSize)
+        public static void diamondLine1(int quiltSize)
         {
-            int Diamonds = quiltSize * 2; //The 2 corresponds to one complete diamonds, <>
+            int Diamonds= quiltSize * 2; //The 2 corresponds to one complete diamonds, <>
 
-            for(int i=1; i<=Diamonds; i++)
+            for (int i = 1; i <= Diamonds; i++)
+            {
+                int number = i % 2;
+                if (number != 0)
+                {
+                    Console.Write("<");
+                }
+                else
+                {
+                    Console.Write(">");
+                }
+            }
+
+        }
+        public static void diamond()
+        {
+            
+            //Declaring the variable of Diamonds
+            int Diamonds = 2; //The 2 corresponds to one complete diamonds, <>
+
+
+            for (int i=1; i<=Diamonds; i++)
             {
                 int number = i % 2;
                 if(number!=0)
