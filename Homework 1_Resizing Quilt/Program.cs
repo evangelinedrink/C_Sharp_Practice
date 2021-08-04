@@ -7,7 +7,13 @@ namespace Homework_1_Resizing_Quilt
         static void Main(string[] args)
         {
             //Quilt Size that the user would like
-            int quiltSize = 2;
+            int quiltSize = 7;
+
+            //Display to show users
+            Console.WriteLine("Welcome to Tina's Quilts! I'm glad you're here!");
+            Console.WriteLine("What size quilt would you like?");
+            Console.WriteLine($"{quiltSize}");
+            Console.WriteLine("Sure! Coming right up...");
 
             //Using the Methods to create the quilt
             topBottomBorders(quiltSize); //Creating the top border of the quilt
@@ -29,22 +35,37 @@ namespace Homework_1_Resizing_Quilt
             {
                 //For Line 1 in the Quilt
                 int lineNumber1 = 1;
+
+                if (quiltSize > 1)
+                {
+                    sideSpacingLine1(quiltSize); //Space between the end of the rug and the side bar 
+                }
+
                 sideBorder();
                 whiteSpaces(lineNumber1);
-                diamondLine1(quiltSize*2); //To double the amount of diamonds by multiplying by 2
-                //diamond(quiltSize*2); //To create two whole diamonds (this is why it is multiplied by 2)
-                //diamond(quiltSize*2); //To create two whole diamonds               
+                diamondLine1(quiltSize * 2); //To double the amount of diamonds by multiplying by 2            
                 whiteSpaces(lineNumber1);
                 sideBorder();
+                /*
+                if (quiltSize > 1)
+                {
+                    sideSpacingLine1(quiltSize); //Space between the end of the rug and the side bar
+                }
+                */
+
             }
-          
+
             //Method to create Lines 2 and 7
-            static void Line2 (int quiltSize)
+            static void Line2(int quiltSize)
             {
                 //For Line 2 in the Quilt
                 int lineNumber2 = 2;
-                LineSpace();
-                //Space between the end of the rug and the side bar 
+                LineSpace(); //This creates a new line to place Line 2 designs in
+                if (quiltSize > 1)
+                {
+                    sideSpacingLine2(quiltSize); //Space between the end of the rug and the side bar 
+                }
+
                 sideBorder();
                 whiteSpaces(lineNumber2);
                 diamond();
@@ -52,14 +73,23 @@ namespace Homework_1_Resizing_Quilt
                 diamond();
                 whiteSpaces(lineNumber2);
                 sideBorder();
+                /*if (quiltSize > 1)
+                {
+                    sideSpacingLine2(quiltSize); //Space between the end of the rug and the side bar
+                }*/
             }
-            
+
             //Method to create Lines 3 and 6
-            static void Line3 (int quiltSize)
+            static void Line3(int quiltSize)
             {
                 //For Line 3 in the Quilt
                 int lineNumber3 = 3;
                 LineSpace();
+                if (quiltSize > 1)
+                {
+                    sideSpacingLine3(quiltSize); //Space between the end of the rug and the side bar
+                }
+
                 sideBorder();
                 whiteSpaces(lineNumber3);
                 diamond();
@@ -67,14 +97,23 @@ namespace Homework_1_Resizing_Quilt
                 diamond();
                 whiteSpaces(lineNumber3);
                 sideBorder();
+                /*if(quiltSize>1)
+                {
+                    sideSpacingLine3(quiltSize); //Space between the end of the rug and the side bar 
+                }*/
             }
-            
+
             //Method to create Lines 4 and 5
-            static void Line4 (int quiltSize)
+            static void Line4(int quiltSize)
             {
                 //For Line 4 in the Quilt
                 int lineNumber4 = 4;
                 LineSpace();
+                if (quiltSize > 1)
+                {
+                    sideSpacingLine4(quiltSize); //Space between the end of the rug and the side bar 
+                }
+
                 sideBorder();
                 whiteSpaces(lineNumber4);
                 diamond();
@@ -82,8 +121,12 @@ namespace Homework_1_Resizing_Quilt
                 diamond();
                 whiteSpaces(lineNumber4);
                 sideBorder();
+                /*if(quiltSize>1)
+                {
+                    sideSpacingLine4(quiltSize); //Space between the end of the rug and the side bar 
+                }*/
             }
-  
+
 
             /*
             //From the original code
@@ -201,7 +244,50 @@ namespace Homework_1_Resizing_Quilt
 
         }
 
-        //Method to create the spacing between the 
+        //Methods to create the spacing between the sides of the quilt and the side border's | design.
+        //For line 1, the spacing between the sides of the quilt and the side border's | design has this equation: (6 * quiltSize) + 1
+        public static void sideSpacingLine1(int quiltSize)
+        {
+            int sideSpacing = (3 * quiltSize) + 1;
+
+            for (int i = 0; i < sideSpacing; i++)
+            {
+                Console.Write(" ");
+            }
+        }
+
+        //For line 2, the spacing between the sides of the quilt and the side border's | design has this equation: (5 * quiltSize) + 1
+        public static void sideSpacingLine2(int quiltSize)
+        {
+            int sideSpacing = (3 * quiltSize) + 1;
+
+            for (int i = 0; i < sideSpacing; i++)
+            {
+                Console.Write(" ");
+            }
+        }
+
+        //For line 3, the spacing between the sides of the quilt and the side border's | design has this equation: (3 * quiltSize) + 1
+        public static void sideSpacingLine3(int quiltSize)
+        {
+            int sideSpacing = (2 * quiltSize) + 1;
+
+            for (int i = 0; i < sideSpacing; i++)
+            {
+                Console.Write(" ");
+            }
+        }
+
+        //For line 4, the spacing between the sides of the quilt and the side border's | design has this equation: (2 * quiltSize) + 1
+        public static void sideSpacingLine4(int quiltSize)
+        {
+            int sideSpacing = quiltSize + 1;
+
+            for (int i = 0; i < sideSpacing; i++)
+            {
+                Console.Write(" ");
+            }
+        }
 
         //Method to create the first diamond
         //First Diamond comes after first blank spaces. This means it will take up 2 spaces in the line and have line numbers after first blank spaces.
@@ -288,8 +374,9 @@ namespace Homework_1_Resizing_Quilt
         }
 
 
+        
         /*Original Code to create the original quilt size */
-
+        /*
         //Creating a space between each of the lines of the quilt with the lineSpace() method.
         public static void lineSpace()
         {
@@ -307,7 +394,7 @@ namespace Homework_1_Resizing_Quilt
                     Console.Write("|"); //Creating the side borders of the quilt
                 }
                  */     
-
+        /*
                 //Create 6 blank spaces in line (might use a For loop where initialization corresponds to the position of the space on the line until the 7th space on line)
                 for (i = 1; i < 7; i++)
                 {
@@ -343,7 +430,7 @@ namespace Homework_1_Resizing_Quilt
                 {
                     Console.Write("|"); //Creating the side borders of the quilt
                 }
-                */
+                
             }
             
         }
@@ -456,6 +543,7 @@ namespace Homework_1_Resizing_Quilt
             }
 
         }
+        */
 
     }
 }
