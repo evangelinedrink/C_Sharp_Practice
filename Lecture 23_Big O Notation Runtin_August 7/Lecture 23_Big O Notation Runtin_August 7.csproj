@@ -1,0 +1,9 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net5.0</TargetFramework>
+    <RootNamespace>Lecture_23_Big_O_Notation_Runtin_August_7</RootNamespace>
+  </PropertyGroup>
+
+</Project>
