@@ -1,4 +1,5 @@
-﻿using System;
+﻿//Purpose of Code: To create different sized quilts based on the user's preference.
+using System;
 
 namespace Homework_1_Resizing_Quilt
 {
@@ -7,7 +8,7 @@ namespace Homework_1_Resizing_Quilt
         static void Main(string[] args)
         {
             //Quilt Size that the user would like
-            int quiltSize = 7;
+            int quiltSize = 1;
 
             //Display to show users
             Console.WriteLine("Welcome to Tina's Quilts! I'm glad you're here!");
@@ -46,13 +47,6 @@ namespace Homework_1_Resizing_Quilt
                 diamondLine1(quiltSize * 2); //To double the amount of diamonds by multiplying by 2            
                 whiteSpaces(lineNumber1);
                 sideBorder();
-                /*
-                if (quiltSize > 1)
-                {
-                    sideSpacingLine1(quiltSize); //Space between the end of the rug and the side bar
-                }
-                */
-
             }
 
             //Method to create Lines 2 and 7
@@ -73,10 +67,6 @@ namespace Homework_1_Resizing_Quilt
                 diamond();
                 whiteSpaces(lineNumber2);
                 sideBorder();
-                /*if (quiltSize > 1)
-                {
-                    sideSpacingLine2(quiltSize); //Space between the end of the rug and the side bar
-                }*/
             }
 
             //Method to create Lines 3 and 6
@@ -97,10 +87,6 @@ namespace Homework_1_Resizing_Quilt
                 diamond();
                 whiteSpaces(lineNumber3);
                 sideBorder();
-                /*if(quiltSize>1)
-                {
-                    sideSpacingLine3(quiltSize); //Space between the end of the rug and the side bar 
-                }*/
             }
 
             //Method to create Lines 4 and 5
@@ -121,10 +107,6 @@ namespace Homework_1_Resizing_Quilt
                 diamond();
                 whiteSpaces(lineNumber4);
                 sideBorder();
-                /*if(quiltSize>1)
-                {
-                    sideSpacingLine4(quiltSize); //Space between the end of the rug and the side bar 
-                }*/
             }
 
 
@@ -245,7 +227,7 @@ namespace Homework_1_Resizing_Quilt
         }
 
         //Methods to create the spacing between the sides of the quilt and the side border's | design.
-        //For line 1, the spacing between the sides of the quilt and the side border's | design has this equation: (6 * quiltSize) + 1
+        //For line 1, the spacing between the sides of the quilt and the side border's | design has this equation: (3 * quiltSize) + 1
         public static void sideSpacingLine1(int quiltSize)
         {
             int sideSpacing = (3 * quiltSize) + 1;
@@ -256,7 +238,7 @@ namespace Homework_1_Resizing_Quilt
             }
         }
 
-        //For line 2, the spacing between the sides of the quilt and the side border's | design has this equation: (5 * quiltSize) + 1
+        //For line 2, the spacing between the sides of the quilt and the side border's | design has this equation: (3 * quiltSize) + 1
         public static void sideSpacingLine2(int quiltSize)
         {
             int sideSpacing = (3 * quiltSize) + 1;
@@ -267,7 +249,7 @@ namespace Homework_1_Resizing_Quilt
             }
         }
 
-        //For line 3, the spacing between the sides of the quilt and the side border's | design has this equation: (3 * quiltSize) + 1
+        //For line 3, the spacing between the sides of the quilt and the side border's | design has this equation: (2 * quiltSize) + 1
         public static void sideSpacingLine3(int quiltSize)
         {
             int sideSpacing = (2 * quiltSize) + 1;
@@ -278,7 +260,7 @@ namespace Homework_1_Resizing_Quilt
             }
         }
 
-        //For line 4, the spacing between the sides of the quilt and the side border's | design has this equation: (2 * quiltSize) + 1
+        //For line 4, the spacing between the sides of the quilt and the side border's | design has this equation: quiltSize + 1
         public static void sideSpacingLine4(int quiltSize)
         {
             int sideSpacing = quiltSize + 1;
