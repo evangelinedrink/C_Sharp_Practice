@@ -1,0 +1,9 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net5.0</TargetFramework>
+    <RootNamespace>Lectures_24_and_25_Solving_Coding_Problems_August_14</RootNamespace>
+  </PropertyGroup>
+
+</Project>
