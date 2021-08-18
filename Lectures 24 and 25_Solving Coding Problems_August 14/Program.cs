@@ -97,6 +97,25 @@ namespace Lectures_24_and_25_Solving_Coding_Problems_August_14
             Console.WriteLine($"The lowest value in the problem5 array is {lowestValue}");
             Console.WriteLine($"The highest values in the problem5 array is {highestValue}");
 
+
+            /*Problem 6: Obtain 2 numbers and check to see how far its value is from 20.*/
+            //Obtaining the first and second numbers and comparing them to the number 20
+            Console.WriteLine("Input first integer: ");
+            int problem6Number1 = Convert.ToInt32(Console.ReadLine()); //Reads what the user types in the Console (thanks to Console.ReadLine()) and converts the typed string into an integer
+
+            Console.WriteLine("Input second integer: ");
+            int problem6Number2 = Convert.ToInt32(Console.ReadLine());
+
+            int compareNumberProb6 = 20;
+
+            //Comparing the two numbers that the user entered with the number 20. Taking the absolute value with Math.Abs
+            int problem6Compare1 = Math.Abs(problem6Number1 - compareNumberProb6);
+            int problem6Compare2 = Math.Abs(problem6Number2 - compareNumberProb6);
+
+            //Display the results to the Console
+            Console.WriteLine($"The difference between the first number and 20 is {problem6Compare1}");
+            Console.WriteLine($"The difference between the second number and 20 is {problem6Compare2}");
+
         }
     }
 }
