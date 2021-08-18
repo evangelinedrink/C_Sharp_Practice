@@ -76,25 +76,27 @@ namespace Lectures_24_and_25_Solving_Coding_Problems_August_14
             int[] problem5 = new int[] { 3, 9, 7 };
 
             //Declaring the lowest and highest values that will be changed to the numbers after iterating through the For loop
-            int lowestValue = 0;
-            int highestValue = 0;
+            int lowestValue = problem5[0];
+            int highestValue = problem5[1];
 
             for(int i=0; i<problem5.Length; i++)
             {
                 int currentValue = problem5[i];
 
-                if()
-                for(int k=1; k<problem5.Length; k++)
+                if(currentValue>highestValue)
                 {
-                    int checkValue = problem5[k];
-
-                    if (currentValue > checkValue)
-                    {
-                        lowestValue = checkValue;
-                        highestValue = currentValue;
-                    }
+                    highestValue = currentValue;
+                } else if (currentValue<lowestValue) 
+                {
+                    lowestValue = currentValue;
                 }
             }
+            //Console Log to show which values are the high and low values
+            foreach (int problem5Value in problem5)
+                Console.WriteLine($"The values in the problem 5 array are: {problem5Value}");
+            Console.WriteLine($"The lowest value in the problem5 array is {lowestValue}");
+            Console.WriteLine($"The highest values in the problem5 array is {highestValue}");
+
         }
     }
 }
