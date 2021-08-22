@@ -3,7 +3,7 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>net5.0</TargetFramework>
-    <RootNamespace>Homework_2_Order_Tracker</RootNamespace>
+    <RootNamespace>Homework_2_Restuarant_Ordering_System</RootNamespace>
   </PropertyGroup>
 
 </Project>

@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31613.86
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Homework 2_Order Tracker", "Homework 2_Order Tracker.csproj", "{C2B6896C-27E8-47F0-8651-B4B4EFC172A5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Homework 2_Restuarant Ordering System", "Homework 2_Restuarant Ordering System.csproj", "{364A5067-1199-43A8-BCEE-B67B0F0C272D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{C2B6896C-27E8-47F0-8651-B4B4EFC172A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C2B6896C-27E8-47F0-8651-B4B4EFC172A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C2B6896C-27E8-47F0-8651-B4B4EFC172A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C2B6896C-27E8-47F0-8651-B4B4EFC172A5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{364A5067-1199-43A8-BCEE-B67B0F0C272D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{364A5067-1199-43A8-BCEE-B67B0F0C272D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{364A5067-1199-43A8-BCEE-B67B0F0C272D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{364A5067-1199-43A8-BCEE-B67B0F0C272D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {9EABB571-5AA7-43A9-BDF6-DEDAB0FB9536}
+		SolutionGuid = {5EA67923-28D2-4591-9FF5-4E3281607B32}
 	EndGlobalSection
 EndGlobal
