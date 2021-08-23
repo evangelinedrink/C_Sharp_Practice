@@ -116,6 +116,34 @@ namespace Lectures_24_and_25_Solving_Coding_Problems_August_14
             Console.WriteLine($"The difference between the first number and 20 is {problem6Compare1}");
             Console.WriteLine($"The difference between the second number and 20 is {problem6Compare2}");
 
+            /*Problem 8: Rotate the elements in an array (length 3) of integers in left direction*/
+            //Creating an array of length 3 with integers
+            int[] problem8Array= {5, 27, 1991};
+
+            //Console the list of the original array
+            Console.WriteLine("The original array: ");
+            foreach(int value in problem8Array)
+            {
+                Console.WriteLine(value);
+            }
+
+            //Using a For loop to go over the entire array and then changing the order of the values in the array
+            Console.WriteLine("The revised array: ");
+            for(int i=0; i<problem8Array.Length-1; i++) //There is a -1 in the second condition because we want i to always be less than j (where j starts at 1)
+            {
+                
+                for(int j=1; j<problem8Array.Length; j++)
+                {
+                    int placeholder = problem8Array[i];
+                    problem8Array[i] = problem8Array[j];
+                    problem8Array[j] = placeholder;
+                }
+                
+            }
+             foreach(int value in problem8Array)
+            {
+                Console.WriteLine(value);
+            }
         }
     }
 }
