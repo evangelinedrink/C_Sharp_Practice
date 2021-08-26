@@ -116,6 +116,8 @@ namespace Lectures_24_and_25_Solving_Coding_Problems_August_14
             Console.WriteLine($"The difference between the first number and 20 is {problem6Compare1}");
             Console.WriteLine($"The difference between the second number and 20 is {problem6Compare2}");
 
+            /*Problem 7:*/
+            
             /*Problem 8: Rotate the elements in an array (length 3) of integers in left direction*/
             //Creating an array of length 3 with integers
             int[] problem8Array= {5, 27, 1991};
