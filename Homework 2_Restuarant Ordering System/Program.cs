@@ -38,15 +38,14 @@ namespace Homework_2_Restuarant_Ordering_System
             foreach (string item in menu)
                 Console.WriteLine(item);
 
-            //Making all the menu items upper case to be checked with the user's input
-            string[] menuUpperCase;
-
+            //Within this For loop, we are making all the values in the menu uppercased. This is being done because user's input is going to be placed in uppercase letters
+            //The code will verify that the user's input(s), which is uppercase letters, corresponds to an item in the menu (which all of the menu's items are becoming upper cased letters in the For loop below.
             for(int i=0; i< menu.Length; i++)
             {
                 menu[i]= menu[i].ToUpper();
             }
             //Asking the user what they would like to order and placing their orders in a queue and stack
-            //Passing in the menu array to the restaurantOrders() method that we can use in that method
+            //Passing in the menu array to the restaurantOrders() method, that way we can use the menu array (which has all upper case elements) in that method
             restaurantOrders(menu);
 
         }
@@ -107,32 +106,19 @@ namespace Homework_2_Restuarant_Ordering_System
                 //Checking to see if the item typed in by the user is in the menu
                 //Using Array.Exists() function to check this: This function returns a Boolean.
                 //True if the element exists in the array, False if the element does not exist in the array.
-                //Also using an If statement to check this
-                //Use a foreach to go through all the items in the array
-                for(int i=0; i<menu.Length; i++)
+                //The other condition (userOrder!="Quit") ensures that the code within this If statement will not run when the user types Quit in the Console
+                if (((Array.Exists(menu, item => item == userOrder)) == false) || (userOrder!="QUIT"))
                 {
-                    //string menuItemUpperCase = menu[i].ToUpper();
+                    Console.WriteLine("The item that you are trying to order is not in our menu. Please select an item from our menu.");
 
+                    //Asking the user what they would like to order
+                    Console.WriteLine("What would you like? If you are done ordering, type 'Quit' in the Console.");
 
-                    if(userOrder != menu[i])
-                    {
-                        //string lastItemUpperCase = menu[menu.Length - 1].ToUpper();
-
-                        if (userOrder != menu[menu.Length - 1].ToUpper())
-                        {
-                            Console.WriteLine("The item that you are trying to order is not in our menu. Please select an item from our menu.");
-
-                            //Asking the user what they would like to order
-                            Console.WriteLine("What would you like? If you are done ordering, type 'Quit' in the Console.");
-
-                            //Obtaining the user's order by using Console.ReadLine()
-                            //Taking the user's input and placing it in upper case by using the ToUpper() method.
-                            userOrder = Console.ReadLine().ToUpper();
-                        }
-                    } 
-                }
-                //if(Array.Exists(menu, userOrder => userOrder ==)==false)
-    
+                    //Obtaining the user's order by using Console.ReadLine()
+                    //Taking the user's input and placing it in upper case by using the ToUpper() method.
+                    userOrder = Console.ReadLine().ToUpper();
+                };
+                
                 
                 //Placing the order in the queue
                 orderList.Enqueue(userOrder);
