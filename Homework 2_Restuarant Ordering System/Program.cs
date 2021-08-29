@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections; //This will enable us to use Stacks
 using System.Collections.Generic; //This will let us use the Queue
+using System.Linq; //This will enable Contains method to work
 
 namespace Homework_2_Restuarant_Ordering_System
 {
@@ -89,7 +90,8 @@ namespace Homework_2_Restuarant_Ordering_System
             //Declaring the variable userOrder (the user can type in lower or upper cased)
             string userOrder = "";
 
-
+            //Initialize the orderListArray
+            String[] orderListArray;
 
             //Creating a loop that will display the question of what they would like to order 
             //and the loop will stop once the user types "Quit" in the Console
@@ -103,11 +105,19 @@ namespace Homework_2_Restuarant_Ordering_System
                 userOrder = Console.ReadLine().ToUpper();
 
 
+                //If the user types in "Quit", the code within this If statement will stop running because we are using break statement.
+                //This If statement is placed before checking to see if the item written in the Console is in the menu that way when the user types in Quit in the Console, the code below will not run .
+                if (userOrder =="QUIT")
+                {
+                    //Placing QUIT in the queue to be placed into the orderListArray
+                    orderList.Enqueue(userOrder);
+                    break;
+                }
+
                 //Checking to see if the item typed in by the user is in the menu
-                //Using Array.Exists() function to check this: This function returns a Boolean.
-                //True if the element exists in the array, False if the element does not exist in the array.
-                //The other condition (userOrder!="Quit") ensures that the code within this If statement will not run when the user types Quit in the Console
-                if (((Array.Exists(menu, item => item == userOrder)) == false) || (userOrder!="QUIT"))
+                //Using Contains() method to check this: This function returns a Boolean.
+                //True if the element exists in the array (this will be True if it is written as menu.Contains(userOrder), False if the element does not exist in the array (!menu.Contains(userOrder).
+                if ((!(menu.Contains(userOrder))))
                 {
                     Console.WriteLine("The item that you are trying to order is not in our menu. Please select an item from our menu.");
 
@@ -118,22 +128,19 @@ namespace Homework_2_Restuarant_Ordering_System
                     //Taking the user's input and placing it in upper case by using the ToUpper() method.
                     userOrder = Console.ReadLine().ToUpper();
                 };
-                
-                
+
+
                 //Placing the order in the queue
                 orderList.Enqueue(userOrder);
 
                 //Placing the order in the stack
                 orderTracker.Push(userOrder);
 
-                //Placing the order in the array
-                //orderListArray.Add(userOrder);
-
             } while (userOrder != "QUIT"); //If the condition inside of the While Loop is true, the code inside of the body will run. If user doesn't type "QUIT", they will be prompted to what they would like to addionally order.
 
             //Creating an array for the items in the queue, that way it will display the Order #number in the Console.
             //We will use the ToArray() method to do this.
-            String[] orderListArray = orderList.ToArray();
+            orderListArray = orderList.ToArray();
 
             //Edge Statement: If the user does not order anything, the following code will be displayed
             if (orderListArray[0] == "QUIT")
@@ -142,8 +149,6 @@ namespace Homework_2_Restuarant_Ordering_System
                 Console.WriteLine("List of orders: NONE");
                 Console.WriteLine("Order Tracker: NONE");
             }
-
-            
 
 
             //Diplaying the elements in the array
@@ -184,26 +189,6 @@ namespace Homework_2_Restuarant_Ordering_System
 
             }
 
-
-
-
-            //Method to keep track of orders (this method will contain a queue)
-            //userOrder is what the user has typed into the Console (their order(s)
-            /*
-             public static void restaurantOrdersQueue(string[] args, string userOrder) 
-            {
-            //Creating our queue that will contain the list of orders from the first order to the last orders
-            Queue<string> orderList = newQueue<string>();
-
-            //Placing the orders in the queue
-            orderList.Enqueue(userOrder)
-
-            }
-             */
-
-            //User will type what they would like to order in the Console. 
-            //This input would be obtained by using Console.ReadLine() method
-            //Console.
         }
     }
 }
