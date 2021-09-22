@@ -75,11 +75,35 @@ namespace Lecture_30_Beginner_Technical_Interview_Problems
             //nInteger as the length of the array.
             for(int i=1; i<= nInteger; i++)
             {
-                //Converting the number to be placed in the numberArray as a string
-                //While the For loop runs, the number for i will be placed in the number array
-                string numberToArray = Convert.ToString(i);
-                //Adding the number (which is a string) to the numberArray
-                numberArray[i - 1] = numberToArray;
+                
+
+                //Using an If/Else If Statement to determine if
+                //the number being placed in the numberArray will be replaced with Fizz, FizzBuzz or Buzz
+                //If the number i (which is being placed in the numberArray) is divisible by 3 and 5, replace the number with "FizzBuzz"
+                if ((i % 3 == 0) && (i % 5 == 0))
+                {
+                    string fizzBuzz = "FizzBuzz";
+                    //Since all arrays have the starting index number at 0, i-0 has to be used
+                    numberArray[i - 1] = fizzBuzz;
+                }
+                else if (i % 3 == 0) //If the number i is divisible by 3, place Fizz in place of the number in the array
+                {
+                    string fizz = "Fizz";
+                    numberArray[i - 1] = fizz;
+                }
+                else if (i % 5 == 0)   //If the number i is divisible by 5, place Buzz in place of the number in the array
+                {
+                    string buzz = "Buzz";
+                    numberArray[i - 1] = buzz;
+                } else
+                {
+                    //Converting the number to be placed in the numberArray as a string
+                    //While the For loop runs, the number for i will be placed in the number array
+                    string numberToArray = Convert.ToString(i);
+
+                    //Adding the number (which is a string) to the numberArray
+                    numberArray[i - 1] = numberToArray;
+                }
             }
             
             //Displaying the array in the Console.
@@ -87,12 +111,6 @@ namespace Lecture_30_Beginner_Technical_Interview_Problems
             {
                 Console.WriteLine(item);
             }
-            /*
-            if((nInteger%3==0) || (nInteger%5==0))
-            {
-
-            }
-            */
 
         }
 
