@@ -58,6 +58,42 @@ namespace Lecture_30_Beginner_Technical_Interview_Problems
 
             //LeetCode Problem 412: Fizz Buzz
             //https://leetcode.com/problems/fizz-buzz/
+
+            //Asking user to type in an integer
+            Console.WriteLine("Type an integer in the console.");
+
+            //Getting the user's response and letting the integer equal to nString
+            string nString = Console.ReadLine();
+            //Letting the number that is a string equal to nInteger which is an integer using Convert.ToInt32
+            int nInteger = Convert.ToInt32(nString);
+
+            //Creating the array that will store the number
+            //The length of the array is whatever the nInteger number is
+            string[] numberArray = new string[nInteger];
+
+            //For loop that will display the values in the array using
+            //nInteger as the length of the array.
+            for(int i=1; i<= nInteger; i++)
+            {
+                //Converting the number to be placed in the numberArray as a string
+                //While the For loop runs, the number for i will be placed in the number array
+                string numberToArray = Convert.ToString(i);
+                //Adding the number (which is a string) to the numberArray
+                numberArray[i - 1] = numberToArray;
+            }
+            
+            //Displaying the array in the Console.
+            foreach(string item in numberArray)
+            {
+                Console.WriteLine(item);
+            }
+            /*
+            if((nInteger%3==0) || (nInteger%5==0))
+            {
+
+            }
+            */
+
         }
 
 
