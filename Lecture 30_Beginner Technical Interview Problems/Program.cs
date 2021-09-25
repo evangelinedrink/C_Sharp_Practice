@@ -73,7 +73,7 @@ namespace Lecture_30_Beginner_Technical_Interview_Problems
             foreach(string value in valArray)
             {
                 //Converting valString to an integer that will be pushed in the Stack
-                int val = Int32.Parse(valString);
+                int val = Int32.Parse(value);
 
                 //Pushing the val integer into the minStack Stack
                 minStack.Push(val);
@@ -88,7 +88,23 @@ namespace Lecture_30_Beginner_Technical_Interview_Problems
             int topElement = minStack.Peek();
             Console.WriteLine($"The top element in the stack is {topElement}");
 
+            //Converting the Stack to an array
+            int[] minArray = minStack.ToArray();
 
+            //Creating a minimum value variable that will contain the minimum value after the For loop
+            int minimumValue = minArray[0];
+
+            //For loop that will compare all the values in the minArray to find the minimum value in the array
+            for(int i=1; i<=minArray.Length-1; i++)
+            {
+                if (minArray[i]<minimumValue)
+                {
+                    minimumValue = minArray[i];
+                }
+            }
+
+            //Displaying the miminum value in the Console
+            Console.WriteLine($"The minimum value in the Stack is {minimumValue}");
 
 
             //LeetCode Problem 412: Fizz Buzz
