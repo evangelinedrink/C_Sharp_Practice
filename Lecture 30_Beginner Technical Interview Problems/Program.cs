@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic; //Need this to use Stacks
 
 namespace Lecture_30_Beginner_Technical_Interview_Problems
 {
@@ -55,6 +56,40 @@ namespace Lecture_30_Beginner_Technical_Interview_Problems
 
             //LeetCode Challenge 155: Min Stack
             //https://leetcode.com/problems/min-stack/
+
+            //Initializing the Stack
+            Stack<int> minStack = new Stack<int>();
+
+            //Pushing (adding) the variable "val" into the Stack (called minStack)
+            //Asking the user to type a variable in the Console
+            Console.WriteLine("Type values in the Console. Use a comma to separate the values.");
+            string valString = Console.ReadLine();
+            
+            //Separating the values that the user placed in the Console
+            //Placing the values in an array
+            string[] valArray = valString.Split(",");
+
+            //Using a foreach loop to go through all the values in the array
+            foreach(string value in valArray)
+            {
+                //Converting valString to an integer that will be pushed in the Stack
+                int val = Int32.Parse(valString);
+
+                //Pushing the val integer into the minStack Stack
+                minStack.Push(val);
+
+            }
+
+            //Removes the element on top of the stack
+            int topRemoved= minStack.Pop();
+            Console.WriteLine($"The top element removed from the stack is {topRemoved}");
+
+            //Getting the top element of the Stack
+            int topElement = minStack.Peek();
+            Console.WriteLine($"The top element in the stack is {topElement}");
+
+
+
 
             //LeetCode Problem 412: Fizz Buzz
             //https://leetcode.com/problems/fizz-buzz/
