@@ -76,7 +76,7 @@ namespace LeetCode_December_2021
 
             /*HackerRank Exercise: Compare the Triplets*/
             //From: https://www.hackerrank.com/challenges/compare-the-triplets/problem?isFullScreen=true
-
+            /*
             //Creating the arrays that contain Alice and Bob's ratings
             List<int> a = new List<int>() { 1, 2, 3 };
             List<int> b = new List<int>() { 3, 2, 1 };
@@ -113,10 +113,24 @@ namespace LeetCode_December_2021
             //return INTEGER_ARRAY;
             //Displaying the values in the INTEGER_ARRAY 
             Console.WriteLine("[{0} {1}]", INTEGER_ARRAY[0], INTEGER_ARRAY[1]);
-
+            */
 
             /*HackerRank Exercise: A Very Big Sum*/
-            //From:
+            //From: https://www.hackerrank.com/challenges/a-very-big-sum/problem?isFullScreen=true
+
+            //Creating the List that will contain the large numbers
+            List<int> ar= new List<int>() { 5, 1000000001, 1000000002 , 1000000003, 1000000004, 1000000005 };
+
+            //This will keep the sum of the integers
+            //Always end the Long data type with an L . Described in this website: https://www.w3schools.com/cs/cs_data_types.php
+            long LONG_INTEGER = 0L;
+
+            for (int i = 0; i < ar.Count; i++)
+            {
+                LONG_INTEGER += ar[i];
+            }
+            //return LONG_INTEGER;
+            Console.WriteLine(LONG_INTEGER);
         }
     }
 }
