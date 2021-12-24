@@ -34,6 +34,7 @@ namespace LeetCode_December_2021
 
             /*Exercise 1: Two Sum Advance*/
             //This uses a Dictionary containing key and value pairs that will be used to contain the answers
+            /*
             int[] nums = new int[] { 2, 7, 11, 0, 15, 2, 9 };
             int target = 9;
 
@@ -71,6 +72,51 @@ namespace LeetCode_December_2021
             //Displaying the results in the Console.
             foreach (KeyValuePair<int, int> answer in results)
                 Console.WriteLine("[{0},{1}]", answer.Key, answer.Value);
+            */
+
+            /*HackerRank Exercise: Compare the Triplets*/
+            //From: https://www.hackerrank.com/challenges/compare-the-triplets/problem?isFullScreen=true
+
+            //Creating the arrays that contain Alice and Bob's ratings
+            List<int> a = new List<int>() { 1, 2, 3 };
+            List<int> b = new List<int>() { 3, 2, 1 };
+
+            //Creates a size two array that contains Alice and Bob's score
+            List<int> INTEGER_ARRAY = new List<int>() { 0, 0 };
+
+            for (int i = 0; i < a.Count; i++)
+            {
+                //This variable will have Alice's value
+                int aliceCurrent = a[i];
+
+                //This variable will have Bob's value
+                int bobCurrent = b[i];
+
+                //Using If Else/If statements for the comparisons
+                if (aliceCurrent > bobCurrent)
+                {
+                    //Alice will get awarded 1 point
+                    INTEGER_ARRAY[0] += 1;
+                }
+                else if (aliceCurrent < bobCurrent)
+                {
+                    //Bob will get awarded 1 point
+                    INTEGER_ARRAY[1] += 1;
+                }
+                else if (aliceCurrent == bobCurrent)
+                {
+                    //This will return to the beginning of the For loop
+                    continue;
+                }
+            }
+            //Returning the array containing their points
+            //return INTEGER_ARRAY;
+            //Displaying the values in the INTEGER_ARRAY 
+            Console.WriteLine("[{0} {1}]", INTEGER_ARRAY[0], INTEGER_ARRAY[1]);
+
+
+            /*HackerRank Exercise: A Very Big Sum*/
+            //From:
         }
     }
 }
